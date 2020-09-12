@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/FabianeSantos/burger-queen/static/css/main.e401ec0b.chunk.css",
-    "main.js": "/FabianeSantos/burger-queen/static/js/main.097d71f0.chunk.js",
-    "main.js.map": "/FabianeSantos/burger-queen/static/js/main.097d71f0.chunk.js.map",
+    "main.css": "/FabianeSantos/burger-queen/static/css/main.c31faebe.chunk.css",
+    "main.js": "/FabianeSantos/burger-queen/static/js/main.006fa970.chunk.js",
+    "main.js.map": "/FabianeSantos/burger-queen/static/js/main.006fa970.chunk.js.map",
     "runtime-main.js": "/FabianeSantos/burger-queen/static/js/runtime-main.98da474e.js",
     "runtime-main.js.map": "/FabianeSantos/burger-queen/static/js/runtime-main.98da474e.js.map",
-    "static/js/2.f1a17f6b.chunk.js": "/FabianeSantos/burger-queen/static/js/2.f1a17f6b.chunk.js",
-    "static/js/2.f1a17f6b.chunk.js.map": "/FabianeSantos/burger-queen/static/js/2.f1a17f6b.chunk.js.map",
+    "static/js/2.607eaba6.chunk.js": "/FabianeSantos/burger-queen/static/js/2.607eaba6.chunk.js",
+    "static/js/2.607eaba6.chunk.js.map": "/FabianeSantos/burger-queen/static/js/2.607eaba6.chunk.js.map",
     "index.html": "/FabianeSantos/burger-queen/index.html",
-    "precache-manifest.f90ab9e391331327aeeb8f4e3b89e7b0.js": "/FabianeSantos/burger-queen/precache-manifest.f90ab9e391331327aeeb8f4e3b89e7b0.js",
+    "precache-manifest.ee8aee31b248fc93261518cb986fae40.js": "/FabianeSantos/burger-queen/precache-manifest.ee8aee31b248fc93261518cb986fae40.js",
     "service-worker.js": "/FabianeSantos/burger-queen/service-worker.js",
-    "static/css/main.e401ec0b.chunk.css.map": "/FabianeSantos/burger-queen/static/css/main.e401ec0b.chunk.css.map",
-    "static/js/2.f1a17f6b.chunk.js.LICENSE.txt": "/FabianeSantos/burger-queen/static/js/2.f1a17f6b.chunk.js.LICENSE.txt",
+    "static/css/main.c31faebe.chunk.css.map": "/FabianeSantos/burger-queen/static/css/main.c31faebe.chunk.css.map",
+    "static/js/2.607eaba6.chunk.js.LICENSE.txt": "/FabianeSantos/burger-queen/static/js/2.607eaba6.chunk.js.LICENSE.txt",
     "static/media/campana.png": "/FabianeSantos/burger-queen/static/media/campana.45b124f7.png",
     "static/media/logo.png": "/FabianeSantos/burger-queen/static/media/logo.31671874.png"
   },
   "entrypoints": [
     "static/js/runtime-main.98da474e.js",
-    "static/js/2.f1a17f6b.chunk.js",
-    "static/css/main.e401ec0b.chunk.css",
-    "static/js/main.097d71f0.chunk.js"
+    "static/js/2.607eaba6.chunk.js",
+    "static/css/main.c31faebe.chunk.css",
+    "static/js/main.006fa970.chunk.js"
   ]
 }

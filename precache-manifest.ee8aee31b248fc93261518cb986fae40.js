@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "877543dea1963a4eff09bad91ee6648a",
+    "revision": "4efaed1b546868806197ba28fc7070e0",
     "url": "/FabianeSantos/burger-queen/index.html"
   },
   {
-    "revision": "45a3dfe452b1e69ed7ee",
-    "url": "/FabianeSantos/burger-queen/static/css/main.e401ec0b.chunk.css"
+    "revision": "0368fdb729be34f1de86",
+    "url": "/FabianeSantos/burger-queen/static/css/main.c31faebe.chunk.css"
   },
   {
-    "revision": "4abd77c00b660cb1e904",
-    "url": "/FabianeSantos/burger-queen/static/js/2.f1a17f6b.chunk.js"
+    "revision": "607ecb531bca6f4fbf92",
+    "url": "/FabianeSantos/burger-queen/static/js/2.607eaba6.chunk.js"
   },
   {
     "revision": "d0b13a04dd0dc4c851ad16fad1cc6f51",
-    "url": "/FabianeSantos/burger-queen/static/js/2.f1a17f6b.chunk.js.LICENSE.txt"
+    "url": "/FabianeSantos/burger-queen/static/js/2.607eaba6.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "45a3dfe452b1e69ed7ee",
-    "url": "/FabianeSantos/burger-queen/static/js/main.097d71f0.chunk.js"
+    "revision": "0368fdb729be34f1de86",
+    "url": "/FabianeSantos/burger-queen/static/js/main.006fa970.chunk.js"
   },
   {
     "revision": "5c35fb207f80aaa4af57",
