@@ -193,6 +193,8 @@ const RenderOrder = (props) => {
             </div>
             <div className={styles.sectionBtns}>
                 <button onClick={btnEnviarPedido} className={styles.buttonBase}>Enviar Pedido</button>
+                </div>
+                <div className={styles.sectionBtns}>
                 <button onClick={limpiarInput} className={styles.btnAlert}>Eliminar Pedido</button>
             </div>
             {ordenConAdicionales && <AdicionalesComponent
