@@ -261,8 +261,7 @@ td {
     margin-top: 2%;
     display: flex;
     justify-content: center; 
-    align-items: center;
-    /* margin-left: 20%; */
+    align-items: center;    
 }
 
 .bell {
@@ -295,4 +294,8 @@ td {
     to {
         transform: rotate(45deg);
     }
+}
+
+h4{
+    color: tomato;
 }

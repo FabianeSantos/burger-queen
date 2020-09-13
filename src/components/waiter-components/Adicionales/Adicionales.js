@@ -46,30 +46,32 @@ const AdicionalesComponent = (props) => {
     return (
         <div className={styles.datosAdicionales}>
             <div>
-            <h2>Adicionales:</h2>
-            {
-                props.orden.adicionalesItem && props.orden.adicionalesItem.map((item, indice) => {
-                    return (
-                        <div key={indice}>
+                <h2>Adicionales:</h2>
+                {
+                    props.orden.adicionalesItem && props.orden.adicionalesItem.map((item, indice) => {
+                        return (
+                            <div key={indice}>
 
-                            <input
-                                className={styles.checkbox}
-                                onChange={(event) => checkActivado(item, event)}
-                                type="checkbox"
-                                name="adicionales"
-                                value={item.precio}
-                                checked={validarCheckedCheckbox(item)}
-                            /><span>{item.nombre}</span>
-                            {/* {item.nombre.charAt(0).toUpperCase()+ item.nombre.slice(1)} */}
-                        </div>
-                    )
-                })
-            }
-            <textarea className={styles.textarea} type="search" name="post" placeholder="Observaciones:"
-                onChange={captureNotasItem}
-                value={notasItemIngresado}>
-            </textarea>
-            <button onClick={actualizaOrden} className={styles.btnAlertWhite}>Cerrar Adicionales</button>
+                                <input
+                                    className={styles.checkbox}
+                                    onChange={(event) => checkActivado(item, event)}
+                                    type="checkbox"
+                                    name="adicionales"
+                                    value={item.precio}
+                                    checked={validarCheckedCheckbox(item)}
+                                /><span>{item.nombre}</span>
+                                {/* {item.nombre.charAt(0).toUpperCase()+ item.nombre.slice(1)} */}
+                            </div>
+                        )
+                    })
+                }
+                <textarea className={styles.textarea} type="search" name="post" placeholder="Observaciones:"
+                    onChange={captureNotasItem}
+                    value={notasItemIngresado}>
+                </textarea>
+                <div className={styles.sectionBtns}>
+                    <button onClick={actualizaOrden} className={styles.btnAlertWhite}>Cerrar Adicionales</button>
+                </div>
             </div>
         </div>
     )
