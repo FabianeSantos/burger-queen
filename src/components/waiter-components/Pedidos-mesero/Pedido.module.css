@@ -1,0 +1,50 @@
+
+.sectionPedido {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    align-items: center;
+    height: 100%;    
+    line-height: 5px;
+    padding-top: 10px;
+}
+/* 
+.sectionPedidolisto {
+    display: flex;
+    flex-flow: column;
+    background-color: #616161;
+    width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+    align-items: center;
+} */
+
+.sectionItemPedido{    
+    line-height: 20px;
+    border: solid 1px black;
+    border-radius: 10px;    
+    margin: 10px;
+    background-color: white;
+    display: flex;
+    width: 90%;
+    /* border: solid 1px magenta; */
+}
+.boxItemPedido{
+    
+    /* border: solid 1px green;  */
+    margin: 20px;    
+    display:flex;
+    flex-flow: column;
+}
+.sectionItem{
+    /* border: solid 1px blue;  */
+    /* line-height: 7px; */
+}
+
+.buttonKitchen {
+    margin: 5px 5px 5px auto;
+    display: grid;
+    justify-content: flex-end;
+    align-self: center;
+    /* border: solid 1px tomato;   */
+}

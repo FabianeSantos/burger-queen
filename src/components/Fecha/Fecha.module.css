@@ -1,0 +1,14 @@
+@font-face {
+    font-family: burgersongFont;
+    src: url('../../img/PoetsenOne-Regular.ttf');
+}
+
+.fecha{
+    color: rgba(37, 40, 56);
+    font-family: burgersongFont;
+    font-size: 15px;
+    font-weight: 500;
+    display: block;   
+    margin: 0 auto 0 auto;
+    text-align: center;
+}
