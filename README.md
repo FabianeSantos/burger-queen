@@ -40,13 +40,13 @@ Empezamos a planificar todo lo que seria necesario para el desarrollo de la pág
 
 ![imagen-sketch](./src/img/diagrama-de-flujo.jpeg)
 
-![imagen-planificación]()
+
 
 
  ##### Definición de usuario
 
 
- La aplicación fue diseñada y ejecutada para atender a los funcionarios de un restaurante, sendo los meseros y cocineros los principales usuarios.
+ La aplicación fue diseñada y ejecutada para atender a los funcionarios de un restaurante, sendo los meseros y cocineros, los principales usuarios.
 
 
 
@@ -69,7 +69,7 @@ Prototipo de baja fidelidad, con la App **Balsamiq**
 
 ![prototipo-Balsamiq](./src/img/balsamiq.png)
 
-Prototipo de alta fidelidad, hechos con **Figma** 
+Prototipo de alta fidelidad, hecho con **Figma** 
 
 [Link para prototipo alta fidelidad- tablet](https://www.figma.com/proto/EvUQiKTl7JCNLXxnneZJA6/Burger-Queen?node-id=123%3A2259&scaling=min-zoom) 
 
@@ -92,7 +92,10 @@ De acuerdo con los feedbacks recibidos:
 ![pagina finalizada-inicio](./src/img/tablet1.png)
 
 
-![pagina finalizada- mesero](./src/img/tablet3.png)
+![pagina finalizada- mesero](./src/img/tablet2.png)
+
+
+![pagina finalizada- mesero-pedidos-listos](./src/img/tablet3.png)
 
 
 ![pagina finalizada-chef](./src/img/tablet4.png)

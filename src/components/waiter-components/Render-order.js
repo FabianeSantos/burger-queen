@@ -161,7 +161,7 @@ const RenderOrder = (props) => {
                         </tbody>
                     </table>
 
-                    < h2 > Total: $ {totalPedidoIngresado}</h2>
+                    <h2 className={styles.tituloTotal}> Total: $ {totalPedidoIngresado}</h2>
                 </div>
             </div>
 

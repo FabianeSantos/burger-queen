@@ -94,14 +94,19 @@ const ChefView = () => {
                         return (
                           <div key={indiceA}
                             className={styles.sectionItem}>
-                            <p>{element.nombre} {element.cantidad}</p>
-                            <p>{element.observaciones}</p>
+
+                            <p>{element.nombre}</p>
+                            <div className={styles.adicionalItem}>{element.cantidad}</div>
+                            <div className={styles.adicionalItemObs}>{element.observaciones}</div>
+
                             {
                               [element.adicionales].map(adicionales => {                               
                                 return (
                                   adicionales.map((adicional, ind) => {
                                     return (
-                                      <div key={ind}>{adicional.nombre}</div>
+
+                                      <div key={ind} className={styles.adicionalItem}>{adicional.nombre}</div>
+
                                     )
                                   })
                                 )
@@ -116,7 +121,7 @@ const ChefView = () => {
                   }
                 </div>
                 <div className={styles.buttonKitchen}>
-                  <button className={styles.botonCocina}>En Proceso</button>
+                  {/* <button className={styles.botonproceso}>En Proceso</button> */}
                   <button onClick={() => enviarPedidoListo((ordenes.data().id), (ordenes.data()), ordenes)} className={styles.botonCocina}>Listo</button>
                 </div>
               </div>
@@ -125,16 +130,14 @@ const ChefView = () => {
         }
       </div>
 
-      <div className={styles.sectionPedidolisto}><h2>Pedidos Recibidos</h2>
-        <div className={styles.boxKitchen}>
-          <div className={styles.numberAndtime}></div>
+      <div className={styles.sectionPedidolisto}><h2 className={styles.tituloBlanco}>Pedidos Recibidos</h2>
+        <div className={styles.boxKitchen}>          
           <div className={styles.customerName}>
             {
               pedidos.map(itemOrder => {
                 return (
                   <div key={itemOrder.id}>
-                    {itemOrder.data().id}
-                    {/* <button className={styles.buttonSee}>Ver Pedido</button> */}
+                    {itemOrder.data().id}                   
                   </div>
                 )
               })

@@ -59,11 +59,12 @@ const PedidosMesero = (props) => {
 
                             <div className={styles.boxItemPedido}>
                                 <div className={styles.sectionItem}>
-                                    <div>
+
                                         {documentos.data().id}
+                                     <div className= {styles.boxmesa}>
                                         Mesa:{documentos.data().mesa}
                                     </div>
-                                    <div>
+                                    <div className= {styles.boxClient}>
                                         Cliente:{documentos.data().cliente}
                                     </div>
 

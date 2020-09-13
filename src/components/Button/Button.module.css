@@ -1,17 +1,17 @@
-
+.divBtnSalir{
+    align-items: center;
+}
 .buttonSalir{ 
-    width: 150px;
-    height: 37px;
-    margin: 30px auto 30px auto;
+    width: 150px!important;
+    height: 37px!important;
+    /* margin: 30px auto 30px auto; */
     background-color: transparent;
-    color: white;
-    font-size: 18px;
+    color: white !important;
+    font-size: 16px;
     font-weight: 500;
     border-radius: none; 
     border: .5px solid transparent; 
     text-align: center;
-    padding: 2px auto 2px auto;
-    box-shadow: transparent; 
-    display: block;
+    padding: 2px auto 2px auto;    
     
 }

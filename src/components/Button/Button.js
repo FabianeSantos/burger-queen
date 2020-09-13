@@ -13,7 +13,7 @@ const BtnCerrarSesion = () => {
     }
 
     return (
-        <div className={styles.buttoncerrar}>
+        <div className={styles.divBtnSalir}>
             <button onClick={closeSetion} className={styles.buttonSalir}><Link to="/">Cerrar Sesión</Link></button>
         </div>
 
