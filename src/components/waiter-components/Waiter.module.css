@@ -1,19 +1,16 @@
 .container {
-    /* display: flex;
+    display: flex;
     flex-flow: row;
-    background-color: transparent;  */
+    background-color: transparent;
+    display: flex;
     width: 100%;
-    height: 100%;
     background-color: #F0EFEB;
-    display: grid;
-    grid-template-columns: 18% 45% 37%;
-   
+    height: 100%;
 }
 
 .logo {
     width: 100px;
     margin: 20px auto auto auto;
-    /* padding: 12px; */
     align-items: center;
     margin-bottom: 150px;
 }
@@ -22,32 +19,39 @@
     display: flex;
     flex-flow: column;
     background-color: #FCBF49;
-    width: 100%;
+    width: 15%;
     align-items: center;
     padding: 10px;
     box-sizing: border-box;
 }
 
 .sectionMenu {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: start;
+    box-sizing: border-box;
+}
+
+.sectionRenderMenu {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    align-items: center;
-    box-sizing: border-box;
-    /* margin-block-end: auto; */
-    /*border: solid 1px green;
+    align-items: start;
+    box-sizing: border-box;   
+    justify-content: center;
     padding-top: 50px;
-    padding-bottom: 50px; */
 }
 
 .imgItemMenu {
     width: 100px;
     height: 100px;
     object-fit: cover;
-    /* border: solid gray 2px; */
     margin: 4px auto 0 auto;
     position: relative;
+    cursor: pointer;
 }
 
 .box {
@@ -66,14 +70,18 @@
     border-radius: 3px;
 }
 
+.sectionRenderPedido {
+    width: 100%;
+    box-sizing: border-box;
+}
+
 .sectionOrder {
     background-color: #616161;
-    width: 100%;
+    width: 35%;
     padding: 10px;
     box-sizing: border-box;
     justify-content: center;
     align-items: center;
-    box-sizing: border-box;
 }
 
 @font-face {
@@ -119,18 +127,31 @@ h2 {
 }
 
 .titulosGrey {
-    margin: 0 auto 0 auto;
+    margin: -10px 15px 0 auto;
     font-size: 15px;
-    text-align: center;
-    font-weight: 600;
-    color: rgba(37, 40, 56);
+    text-align: end;
+    font-weight: 500;
+    color: #616161;
 }
+
+.titulosGrey:hover {
+    color: #FB5607;
+}
+ table{
+    border:white 2px solid;
+    border-left: none;
+    border-right:none;
+    width: 100%;
+
+} 
+
 
 th {
     margin: 5px;
     font-size: 18px;
     text-align: center;
     color: #FCBF49;
+   
 }
 
 td {
@@ -138,6 +159,7 @@ td {
     font-size: 18px;
     text-align: center;
     color: white;
+   
 }
 
 .boxTable {
@@ -146,24 +168,38 @@ td {
 }
 
 .inputCliente {
-    width: 250px;
+    width: 100%;
     height: 30px;
     margin: auto 0 auto auto;
     color: black;
-    font-size: 18px;
+    font-size: 16px;
     border-radius: 10px;
-    background-color: #C4C4C4;
-    border: 2px solid transparent;
+    background-color: transparent;    
     text-align: center;
+    border: 1px solid #FCBF49;
     box-sizing: border-box;
 }
-
-button {
+.buttonBase {
     width: 180px;
     height: 37px;
     margin: 10px;
     background-color: #FCBF49;
     color: black;
+    font-size: 18px;
+    font-weight: 300;
+    border-radius: 20px;
+    border: .5px solid black;
+    text-align: center;
+    padding: 2px auto 2px auto;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.btnAlert {
+    width: 180px;
+    height: 37px;
+    margin: 10px;
+    background-color: #FB5607;
+    color: white;
     font-size: 18px;
     font-weight: 300;
     border-radius: 20px;
@@ -196,9 +232,11 @@ button {
 .sectionDatosCliente {
     display: block;
     background-color: white;
-    border-radius: 15px;
+    border-radius: 10px;
     box-sizing: border-box;
     padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .sectionBtns {
@@ -215,16 +253,15 @@ button {
     width: 35%;
 }
 
-.countbell {    
+.countbell {
     margin: 70px auto 70px auto;
     font-size: 18px;
     align-items: center;
     text-align: center;
-
     font-weight: 500;
     color: rgba(37, 40, 56);
 }
- 
+
 @media (prefers-reduced-motion: no-preference) {
     .imgbell {
         animation: imgbell-spin infinite 2s linear;
@@ -238,4 +275,4 @@ button {
     to {
         transform: rotate(45deg);
     }
-} 
+}

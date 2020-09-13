@@ -44,7 +44,8 @@ const AdicionalesComponent = (props) => {
     }, [props.orden.observaciones, props.orden.adicionalesSeleccionados]);
 
     return (
-        <div>
+        <div className={styles.datosAdicionales}>
+            <div>
             <h2>Adicionales:</h2>
             {
                 props.orden.adicionalesItem && props.orden.adicionalesItem.map((item, indice) => {
@@ -58,7 +59,8 @@ const AdicionalesComponent = (props) => {
                                 name="adicionales"
                                 value={item.precio}
                                 checked={validarCheckedCheckbox(item)}
-                            />{item.nombre}
+                            /><span>{item.nombre}</span>
+                            {/* {item.nombre.charAt(0).toUpperCase()+ item.nombre.slice(1)} */}
                         </div>
                     )
                 })
@@ -67,7 +69,8 @@ const AdicionalesComponent = (props) => {
                 onChange={captureNotasItem}
                 value={notasItemIngresado}>
             </textarea>
-            <button onClick={actualizaOrden} className={styles.btnAlert}>Cerrar Adicionales</button>
+            <button onClick={actualizaOrden} className={styles.btnAlertWhite}>Cerrar Adicionales</button>
+            </div>
         </div>
     )
 

@@ -11,7 +11,7 @@ const PedidosMesero = (props) => {
     const getOrdenesListas = () => {
         refListas
             .onSnapshot((querySnapshot) => {
-                // console.log(querySnapshot.docs);
+                
                 setShowOrderStatus(querySnapshot.docs);
             })
     };

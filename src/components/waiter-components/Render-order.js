@@ -7,21 +7,12 @@ import basurero from '../../img/basurero.png';
 import editaPedido from '../../img/editarPedido.png';
 
 
-// import ItemPedido from './Item-pedido';
-
-
 const RenderOrder = (props) => {
 
-    /* const [valorIngresado, setValorIngresado] = useState('');
-
-    const [itemIngresado, setitemIngresado] = useState('La Rosalia'); */
     const [cantidadItemIngresado, setcantidadItemIngresado] = useState(1);
-    // const [precioItemIngresado, setprecioItemIngresado] = useState(5000);
     const [totalPedidoIngresado, setTotalPedidoIngresado] = useState(0);
 
-    /* const [editarItemIngresado, seteditarItemIngresadoo] = useState(false);
-    const [eliminarItemIngresado, seteliminarItemIngresado] = useState(false);
- */
+
     const [idPedido, setIdPedido] = useState('');
 
     const [nameClientIngresado, setNameClientIngresado] = useState('');
@@ -34,37 +25,23 @@ const RenderOrder = (props) => {
     const ref = firebase.firestore().collection('ordenes');
 
 
-    const pruebaFire = () => {
+    const getQuerySnapshotFirebase = () => {
         ref
             .onSnapshot({ includeMetadataChanges: true }, (querySnapshot) => {
-                // const items = [];
+
                 querySnapshot.forEach((doc) => {
-                    // console.log(doc.data());
-                    /* if (doc.type === "added") {
-                        console.log("New city: ", doc.data());
-                    } */
 
                 });
 
                 const numeroPedidos = querySnapshot.docs.length;
-                setIdPedido('pedido #' + (numeroPedidos + 1));
+                setIdPedido('Pedido #' + (numeroPedidos + 1));
                 let source = querySnapshot.metadata.fromCache ? "local cache" : "server";
-                console.log("Data came from " + source);
+               
 
             });
     }
 
-    const pruebaFireGet = () => {
-        ref
-            .get()
-            .then((data) => {
-                const dataItem = data.docs.forEach(doc => {
-                    console.log(doc.data());
-                });
-            })
-    }
-
-    const pruebaFireAdd = () => {
+    const addOrderFirebase = () => {
         const ordenesAEnviar = props.ordenesTraidas.map(orden => {
             return {
                 cantidad: 1,
@@ -91,8 +68,8 @@ const RenderOrder = (props) => {
         if (nameClientIngresado === "" || tableClientIngresado === "") {
             alert('Por favor ingresar datos del Pedido');
         } else {
-            pruebaFireAdd().then(() => {
-                // setIdPedido('');
+            addOrderFirebase().then(() => {
+
                 setTableClientIngresado('');
                 setNameClientIngresado('');
                 props.limpiarEstadoOrden();
@@ -139,11 +116,11 @@ const RenderOrder = (props) => {
     }
 
     useEffect(() => {
-        pruebaFire();
+        getQuerySnapshotFirebase();
     }, []);
 
     //Se actualiza total pedido
-    useEffect(() => {        
+    useEffect(() => {
         let total = 0;
         props.ordenesTraidas.forEach(orden => {
             total = total + calcularOrdenConAdicionales(orden);
@@ -153,7 +130,7 @@ const RenderOrder = (props) => {
     }, [props.ordenesTraidas]);
 
     return (
-        <div>
+        <div className={styles.sectionRenderPedido}>
             <div className={styles.tabla}>
                 <h1>Pedidos</h1>
 
@@ -215,7 +192,7 @@ const RenderOrder = (props) => {
                 />
             </div>
             <div className={styles.sectionBtns}>
-                <button onClick={btnEnviarPedido}>Enviar Pedido</button>
+                <button onClick={btnEnviarPedido} className={styles.buttonBase}>Enviar Pedido</button>
                 <button onClick={limpiarInput} className={styles.btnAlert}>Eliminar Pedido</button>
             </div>
             {ordenConAdicionales && <AdicionalesComponent

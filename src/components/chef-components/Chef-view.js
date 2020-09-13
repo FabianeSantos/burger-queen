@@ -26,7 +26,7 @@ const ChefView = () => {
   };
 
   const agregarOrdenLista = (ordenEntregada) => {
-    refListas.add( ordenEntregada );
+    refListas.add(ordenEntregada);
   }
 
 
@@ -72,7 +72,7 @@ const ChefView = () => {
         </div>
 
         <div className={styles.fecha}>
-          <CurrentTime/>
+          <CurrentTime />
         </div>
         <BtnCerrarSesion />
       </div>
@@ -93,9 +93,20 @@ const ChefView = () => {
                       item.map((element, indiceA) => {
                         return (
                           <div key={indiceA}
-                          className={styles.sectionItem}>
+                            className={styles.sectionItem}>
                             <p>{element.nombre} {element.cantidad}</p>
                             <p>{element.observaciones}</p>
+                            {
+                              [element.adicionales].map(adicionales => {                               
+                                return (
+                                  adicionales.map((adicional, ind) => {
+                                    return (
+                                      <div key={ind}>{adicional.nombre}</div>
+                                    )
+                                  })
+                                )
+                              })
+                            }
                             {/* <p>{element.adicionales}</p>                                 */}
                           </div>
                         )

@@ -1,31 +1,56 @@
-.textarea {
-  font-family: "Open Sans", sans-serif;
-  /* padding-top: 1em; */
-  outline: none;
-  background: #fdfdf2 !important;
-  border-radius: 2em;
-  font-size: 13px;
-  text-align: center;
-  border-color: #00000029;
-  width: 200px;
-  height: 100px;
-  /* margin-top: 2em;
-      margin-left: 4em;
-      padding-right: 1em;
-      padding-left: 35px; */
-  text-align: center;
-  /* padding-block-end: 11px;
-      padding-block-start: 25px; */
-  cursor: pointer;
+.datosAdicionales {
+  display: block;
+  background-color: white;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
-.btnAlert {
+.textarea {
+  outline: none; 
+  border-radius: 10px;
+  font-size: 16px;
+  text-align: center;
+  border: 1px solid #FCBF49;
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.btnAlertWhite {
+  width: 180px;
+  height: 37px;
+  margin: 10px;
+  background-color: transparent;
+  color: rgba(37, 40, 56);
+  font-size: 18px;
+  font-weight: 300;
+  border-radius: 20px;
+  border: .5px solid #FB5607;
+  text-align: center;
+  padding: 2px auto 2px auto;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.btnAlertWhite:hover {
   background-color: #FB5607;
   color: white;
+  border: .5px solid rgba(37, 40, 56);
 }
 
 input[type="checkbox"]+label {
   border: red;
   background-color: yellowgreen;
-
+  
 }
+
+span {
+  text-transform: capitalize;
+}
+

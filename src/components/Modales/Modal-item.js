@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import styles from './Modales.module.css';
 
 const ModalDescripcionItem = (props) => {
@@ -19,13 +19,13 @@ const ModalDescripcionItem = (props) => {
                     <div>
                     <img src={props.itemMostrado.img} alt="" className={styles.imgItemMenu} />
                     </div>
-                    <h2>{props.itemMostrado.nombre}</h2>
+                    <h2 className={styles.letter}> {props.itemMostrado.nombre}</h2>
                     <p>{props.itemMostrado.descripcion}</p>
                 </div>
                 <span
                     className={styles.close}
                     onClick={cerrarModalDesplegado}
-                >&times; volver</span>
+                >&times; Volver</span>
             </div>
 
         </div>

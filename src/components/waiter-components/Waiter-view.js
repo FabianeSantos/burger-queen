@@ -17,11 +17,7 @@ const WaiterView = () => {
   const [ordenesPedidas, setOrdenesPedidas] = useState([]);
   const [countPedido, setCountPedido] = useState(0);
 
-  // const [totalPedidoIngresado, setTotalPedidoIngresado] = useState([0]);
-
   const refListas = firebase.firestore().collection('ordenesListas');
-
-  // const [styleAnimation, setAnimation] = useState({ display: 'none' }) 
 
   const getOrdenesListas = () => {
     refListas
@@ -29,7 +25,7 @@ const WaiterView = () => {
         setCountPedido(querySnapshot.docs.length);
 
         let source2 = querySnapshot.metadata.fromCache ? "local cache" : "server";
-        console.log("Data came from " + source2);
+
       })
   };
 
@@ -51,14 +47,11 @@ const WaiterView = () => {
       observaciones: ''
     };
     setOrdenesPedidas([...ordenesPedidas, orden]);
-
-    // setTotalPedidoIngresado([...totalPedidoIngresado, ordenRecibida.precio]);
   };
 
   const limpiarEstadoOrden = () => {
     setOrdenesPedidas([]);
-    // setTotalPedidoIngresado([0]);
-  }
+  };
 
   const eliminarItemPedido = (indexAEliminar) => {
     const ordenesFiltradas = ordenesPedidas.filter((orden, index) => {
@@ -69,8 +62,7 @@ const WaiterView = () => {
     const totalOrdenesFiltradas = ordenesFiltradas.map(orden => {
       return orden.precioItem;
     })
-    // setTotalPedidoIngresado(totalOrdenesFiltradas);
-  }
+  };
 
   const actualizarAdicionalesOrdenes = (ordenRecibida, adicionalesRecibidos, notasRecibidas, index) => {
 
@@ -81,15 +73,11 @@ const WaiterView = () => {
       precioItem: ordenRecibida.precioItem,
       adicionalesSeleccionados: adicionalesRecibidos,
       observaciones: notasRecibidas
-    };
-    console.log(orden);
-    console.log(index);
+    };   
 
     ordenesPedidas[index] = orden;
     setOrdenesPedidas([...ordenesPedidas]);
-
-
-  }
+  };
 
   return (
     <div className={styles.container}>
@@ -116,7 +104,7 @@ const WaiterView = () => {
         </div>
       </div>
       <div className={styles.sectionMenu}>
-        <div className={styles.sectionMenu}>
+        <div className={styles.sectionRenderMenu}>
           {showMenu === 'menu' ? <ItemMenu enviarOrdenes={actualizaEstadoOrden} /> :
             showMenu === 'postres' ? <ItemPostres enviarOrdenes={actualizaEstadoOrden} /> :
               <PedidosMesero />
@@ -130,12 +118,10 @@ const WaiterView = () => {
           eliminarItemPedido={eliminarItemPedido}
           actualizarAdicionalesOrdenes={actualizarAdicionalesOrdenes}
 
-          // totalOrdenesTraidas={totalPedidoIngresado}
-
         />
       </div>
     </div >
   );
-}
+};
 
 export default WaiterView;
