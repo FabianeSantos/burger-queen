@@ -94,7 +94,9 @@ const ChefView = () => {
                         return (
                           <div key={indiceA}
                           className={styles.sectionItem}>
-                            <p>{element.nombre} {element.cantidad}</p>                            
+                            <p>{element.nombre} {element.cantidad}</p>
+                            <p>{element.observaciones}</p>
+                            {/* <p>{element.adicionales}</p>                                 */}
                           </div>
                         )
                       })

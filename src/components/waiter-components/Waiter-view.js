@@ -17,15 +17,15 @@ const WaiterView = () => {
   const [ordenesPedidas, setOrdenesPedidas] = useState([]);
   const [countPedido, setCountPedido] = useState(0);
 
-  const [totalPedidoIngresado, setTotalPedidoIngresado] = useState([0]);
+  // const [totalPedidoIngresado, setTotalPedidoIngresado] = useState([0]);
 
   const refListas = firebase.firestore().collection('ordenesListas');
 
-  const [styleAnimation, setAnimation] = useState({ display: 'none' }) 
+  // const [styleAnimation, setAnimation] = useState({ display: 'none' }) 
 
   const getOrdenesListas = () => {
     refListas
-      .onSnapshot({ includeMetadataChanges: true }, (querySnapshot) => {        
+      .onSnapshot({ includeMetadataChanges: true }, (querySnapshot) => {
         setCountPedido(querySnapshot.docs.length);
 
         let source2 = querySnapshot.metadata.fromCache ? "local cache" : "server";
@@ -52,12 +52,12 @@ const WaiterView = () => {
     };
     setOrdenesPedidas([...ordenesPedidas, orden]);
 
-    setTotalPedidoIngresado([...totalPedidoIngresado, ordenRecibida.precio]);
+    // setTotalPedidoIngresado([...totalPedidoIngresado, ordenRecibida.precio]);
   };
 
   const limpiarEstadoOrden = () => {
     setOrdenesPedidas([]);
-    setTotalPedidoIngresado([0]);
+    // setTotalPedidoIngresado([0]);
   }
 
   const eliminarItemPedido = (indexAEliminar) => {
@@ -69,10 +69,10 @@ const WaiterView = () => {
     const totalOrdenesFiltradas = ordenesFiltradas.map(orden => {
       return orden.precioItem;
     })
-    setTotalPedidoIngresado(totalOrdenesFiltradas);
+    // setTotalPedidoIngresado(totalOrdenesFiltradas);
   }
 
-  const actualizarAdicionalesOrdenes = (ordenRecibida, adicionalesRecibidos, notasRecibidas) => {
+  const actualizarAdicionalesOrdenes = (ordenRecibida, adicionalesRecibidos, notasRecibidas, index) => {
 
     const orden = {
       id: ordenRecibida.id,
@@ -83,8 +83,12 @@ const WaiterView = () => {
       observaciones: notasRecibidas
     };
     console.log(orden);
+    console.log(index);
 
-    // setOrdenesPedidas(adicionalesRecibidos);
+    ordenesPedidas[index] = orden;
+    setOrdenesPedidas([...ordenesPedidas]);
+
+
   }
 
   return (
@@ -106,17 +110,17 @@ const WaiterView = () => {
             </div>
           </div>
           <div className={styles.fecha}>
-            <CurrentTime/>
+            <CurrentTime />
           </div>
           <BtnCerrarSesion />
         </div>
       </div>
       <div className={styles.sectionMenu}>
         <div className={styles.sectionMenu}>
-        {showMenu === 'menu' ? <ItemMenu enviarOrdenes={actualizaEstadoOrden} /> : 
-          showMenu === 'postres' ? <ItemPostres enviarOrdenes={actualizaEstadoOrden} /> : 
-          <PedidosMesero/>  
-          }         
+          {showMenu === 'menu' ? <ItemMenu enviarOrdenes={actualizaEstadoOrden} /> :
+            showMenu === 'postres' ? <ItemPostres enviarOrdenes={actualizaEstadoOrden} /> :
+              <PedidosMesero />
+          }
         </div>
       </div>
       <div className={styles.sectionOrder}>
@@ -126,7 +130,7 @@ const WaiterView = () => {
           eliminarItemPedido={eliminarItemPedido}
           actualizarAdicionalesOrdenes={actualizarAdicionalesOrdenes}
 
-          totalOrdenesTraidas={totalPedidoIngresado}
+          // totalOrdenesTraidas={totalPedidoIngresado}
 
         />
       </div>

@@ -4,7 +4,7 @@
 
 
 
-##### [Link para pagina web ]()
+##### [Link para pagina web ](https://burgersong.on.fleek.co/)
 
 
 
@@ -36,7 +36,7 @@ Empezamos a planificar todo lo que seria necesario para el desarrollo de la pág
 
 ### **4. Proceso UX/ UI**
 
- Basado en ideas de las colaboradoras, creamos nuestro sketch, hecho en papel y lapis.
+ Basado en ideas de las colaboradoras, creamos nuestro diagrama de flujo, hecho en papel y lapis.
 
 ![imagen-sketch](./src/img/diagrama-de-flujo.jpeg)
 
@@ -89,13 +89,13 @@ De acuerdo con los feedbacks recibidos:
 
 ### **6. Pagina web Finalizada**
 
-![pagina finalizada inicio]()
+![pagina finalizada-inicio](./src/img/tablet1.png)
 
 
-![pagina finalizada inicio]()
+![pagina finalizada- mesero](./src/img/tablet3.png)
 
 
-![pagina finalizada inicio]()
+![pagina finalizada-chef](./src/img/tablet4.png)
 
 
 

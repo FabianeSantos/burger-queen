@@ -12,16 +12,16 @@ import editaPedido from '../../img/editarPedido.png';
 
 const RenderOrder = (props) => {
 
-    const [valorIngresado, setValorIngresado] = useState('');
+    /* const [valorIngresado, setValorIngresado] = useState('');
 
-    const [itemIngresado, setitemIngresado] = useState('La Rosalia');
+    const [itemIngresado, setitemIngresado] = useState('La Rosalia'); */
     const [cantidadItemIngresado, setcantidadItemIngresado] = useState(1);
-    const [precioItemIngresado, setprecioItemIngresado] = useState(5000);
+    // const [precioItemIngresado, setprecioItemIngresado] = useState(5000);
     const [totalPedidoIngresado, setTotalPedidoIngresado] = useState(0);
 
-    const [editarItemIngresado, seteditarItemIngresadoo] = useState(false);
+    /* const [editarItemIngresado, seteditarItemIngresadoo] = useState(false);
     const [eliminarItemIngresado, seteliminarItemIngresado] = useState(false);
-
+ */
     const [idPedido, setIdPedido] = useState('');
 
     const [nameClientIngresado, setNameClientIngresado] = useState('');
@@ -43,7 +43,7 @@ const RenderOrder = (props) => {
                     /* if (doc.type === "added") {
                         console.log("New city: ", doc.data());
                     } */
-                 
+
                 });
 
                 const numeroPedidos = querySnapshot.docs.length;
@@ -86,19 +86,6 @@ const RenderOrder = (props) => {
         );
     }
 
-    useEffect(() => {
-        pruebaFire();
-    }, []);
-
-    //Se actualiza total pedido
-    useEffect(() => {
-        const reducer = (accumulator, currentValue) => accumulator + currentValue;
-        const totalOrden = props.totalOrdenesTraidas;
-        const sumaTotalOrdenes = totalOrden.reduce(reducer, 0);
-        
-        setTotalPedidoIngresado(sumaTotalOrdenes);
-    }, [props.totalOrdenesTraidas]);
-
 
     const btnEnviarPedido = () => {
         if (nameClientIngresado === "" || tableClientIngresado === "") {
@@ -135,14 +122,35 @@ const RenderOrder = (props) => {
         setTotalPedidoIngresado(0);
     }
 
-    const editarItemPedido = (orden) => {
-        setOrdenConAdicionales(orden);
+    const editarItemPedido = (orden, index) => {
+        setOrdenConAdicionales({ orden, index });
     }
 
-    const actualizarAdicionales = (orden, adicionales, notas) => {
-        props.actualizarAdicionalesOrdenes(orden, adicionales, notas);
+    const actualizarAdicionales = (orden, adicionales, notas, index) => {
+        props.actualizarAdicionalesOrdenes(orden, adicionales, notas, index);
         setOrdenConAdicionales(null);
     }
+
+    const calcularOrdenConAdicionales = (orden) => {
+        const reducer = (accumulator, currentValue) => accumulator + currentValue.precio;
+        const sumaTotalOrdenes = orden.adicionalesSeleccionados.reduce(reducer, 0);
+
+        return sumaTotalOrdenes + orden.precioItem;
+    }
+
+    useEffect(() => {
+        pruebaFire();
+    }, []);
+
+    //Se actualiza total pedido
+    useEffect(() => {        
+        let total = 0;
+        props.ordenesTraidas.forEach(orden => {
+            total = total + calcularOrdenConAdicionales(orden);
+        });
+
+        setTotalPedidoIngresado(total);
+    }, [props.ordenesTraidas]);
 
     return (
         <div>
@@ -163,10 +171,10 @@ const RenderOrder = (props) => {
                                 props.ordenesTraidas.map((orden, index) => {
                                     return (
                                         <tr key={index} className={styles.boxTable}>
-                                            <td><img src={editaPedido} alt="" onClick={() => editarItemPedido(orden)} className={styles.btnIcon} /></td>
+                                            <td><img src={editaPedido} alt="" onClick={() => editarItemPedido(orden, index)} className={styles.btnIcon} /></td>
                                             <td>{orden.nombreItem}</td>
                                             <td>{cantidadItemIngresado}</td>
-                                            <td>$ {orden.precioItem}</td>
+                                            <td>$ {calcularOrdenConAdicionales(orden)}</td>
                                             <td><img src={basurero} alt="" onClick={() => eliminarItemPedido(index)} className={styles.btnIcon} /></td>
                                         </tr>
                                     );
@@ -212,7 +220,8 @@ const RenderOrder = (props) => {
             </div>
             {ordenConAdicionales && <AdicionalesComponent
                 actualizarAdicionales={actualizarAdicionales}
-                orden={ordenConAdicionales}
+                orden={ordenConAdicionales.orden}
+                index={ordenConAdicionales.index}
             />
             }
 

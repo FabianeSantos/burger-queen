@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './Adicionales.module.css';
 
 const AdicionalesComponent = (props) => {
-    const [notasItemIngresado, setnotasItemIngresado] = useState('');
-    const [adicionalesSeleccionados, setAdicionalesSeleccionados] = useState([]);
+    const [notasItemIngresado, setnotasItemIngresado] = useState(props.orden.observaciones);
+    const [adicionalesSeleccionados, setAdicionalesSeleccionados] = useState(props.orden.adicionalesSeleccionados);
 
 
 
     const actualizaOrden = () => {
-        props.actualizarAdicionales(props.orden, adicionalesSeleccionados, notasItemIngresado);
+        props.actualizarAdicionales(props.orden, adicionalesSeleccionados, notasItemIngresado, props.index);
     };
 
     const captureNotasItem = (event) => {
@@ -25,11 +25,29 @@ const AdicionalesComponent = (props) => {
         }
     }
 
+    const validarCheckedCheckbox = (item) => {
+
+        const indexAdicionalSeleccion = adicionalesSeleccionados.indexOf(item);
+
+        if (indexAdicionalSeleccion === -1) {
+            return false;
+        }
+        else {
+            return true;
+        }
+
+    }
+
+    useEffect(() => {
+        setnotasItemIngresado(props.orden.observaciones);
+        setAdicionalesSeleccionados([...props.orden.adicionalesSeleccionados]);
+    }, [props.orden.observaciones, props.orden.adicionalesSeleccionados]);
+
     return (
         <div>
             <h2>Adicionales:</h2>
             {
-                props.orden && props.orden.adicionalesItem.map((item, indice) => {
+                props.orden.adicionalesItem && props.orden.adicionalesItem.map((item, indice) => {
                     return (
                         <div key={indice}>
 
@@ -39,6 +57,7 @@ const AdicionalesComponent = (props) => {
                                 type="checkbox"
                                 name="adicionales"
                                 value={item.precio}
+                                checked={validarCheckedCheckbox(item)}
                             />{item.nombre}
                         </div>
                     )
