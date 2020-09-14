@@ -32,7 +32,8 @@
     width: 70%;
     align-items: center;
     height: 100%;    
-    line-height: 5px;    
+    line-height: 5px;   
+    overflow: scroll; 
 }
 
 .sectionPedidolisto {
